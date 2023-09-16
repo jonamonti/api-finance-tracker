@@ -12,7 +12,9 @@ export const trxCategories = [
   'sports',
   'taxi',
   'transport',
-  'travel'
+  'travel',
+  'salary',
+  'other incomes'
 ]
 
 export const trxTypes = ['income', 'expense'];
