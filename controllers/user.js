@@ -7,14 +7,22 @@ import Transaction from '../models/Transaction.js';
 export const getUser = async (req, res) => {
   try {
     const { id } = req.params;
-    const user = await User.findById(id);
-    res.send(200).json(user);
-  } catch (err) {
-    res.status(404).json({ message: err.message })
+    const user = await User.findById({_id: id});
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(404).json({ message: error.message })
   }
 };
 
 // PUT
 export const updateUser = async (req, res) => {
-
+  try {
+    const { _id, firstName, lastName, email, password, picturePath } = req.body;
+    const updatedUser = await User.findByIdAndUpdate(_id, { firstName, lastName, email, password, picturePath }, { new: true });
+    if (!updatedUser) return res.status(404).json({ message: 'User not found' });
+    res.status(200).json(updatedUser);
+  }
+   catch (error) {
+    res.status(404).json({ message: error.message })
+  }
 }
