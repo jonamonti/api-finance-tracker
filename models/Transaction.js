@@ -2,7 +2,10 @@ import mongoose from "mongoose";
 import { trxCategories, trxTypes } from "../utils/const.js";
 
 const TransactionSchema = new mongoose.Schema({
-  userID: mongoose.Schema.Types.ObjectId,
+  userID: {
+    type: String,
+    required: true
+  },
   type: {
     type: String,
     enum: trxTypes,
