@@ -37,7 +37,7 @@ export const register = async (req, res) => {
 }
 
 // log in user function
-const login = async (req, res) => {
+export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -50,8 +50,8 @@ const login = async (req, res) => {
     if (!match) return res.status(400).json({ message: 'Wrong password' });
     
     // jwt token
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    delete user.password; // to not send password to client
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+    delete user.password; // to not send password to fe
     res.status(200).json({ user, token });
   }
    catch (error) {
