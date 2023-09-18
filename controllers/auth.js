@@ -54,7 +54,8 @@ export const login = async (req, res) => {
     delete user.password; // to not send password to fe
     res.status(200).json({ user, token });
   }
-   catch (error) {
+  catch (error) {
+    console.log(error);
     res.status(500).json({ error: err.message });
   }
 }
