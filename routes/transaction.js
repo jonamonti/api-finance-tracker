@@ -17,7 +17,7 @@ router.post('/', verifyToken, createTrx);
 router.put('/', verifyToken, updateTrx);
 
 // DELETE
-router.delete('/', verifyToken, deleteTrx)
+router.post('/delete', verifyToken, deleteTrx)
 
 
 export default router;
