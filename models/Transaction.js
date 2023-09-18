@@ -25,6 +25,10 @@ const TransactionSchema = new mongoose.Schema({
     type: String,
     enum: trxCategories,
     required: true
+  },
+  date: {
+    type: String,
+    required: true
   }
 },
   { timestamps: true }
