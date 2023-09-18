@@ -11,7 +11,7 @@ FE and BE have separared repos,
   - BE: https://github.com/jonamonti/api-finance-tracker
   - FE: https://github.com/jonamonti/cli-finance-tracker
 
-Clone them and run npm start on the console.
+Clone them, install dependencies with npm install, and then run npm start on the console for each one.
 
 Both repos need a .env file. I'll be sending those by email.
 
