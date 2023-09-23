@@ -63,7 +63,7 @@ export const getTrxsCsv = async (req, res) => {
       if (error) {
         res.status(404).json({ message: 'File not found' })
       } else {
-        res.status(200).json({ message: true });
+        // res.status(200).json({ message: true });
       }
     })
 
