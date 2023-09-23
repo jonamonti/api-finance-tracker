@@ -18,3 +18,5 @@ export const trxCategories = [
 ]
 
 export const trxTypes = ['income', 'expense'];
+
+export const CSV_SAVE_PATH = 'public/csv/file.csv'
